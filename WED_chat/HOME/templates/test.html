@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block content %}
+<footer class="menu">
+
+  <div id="clear" class="clear"> clear </div>
+  <a href="#" class="setting">setting</a>
+  <a href="#" class="update to pro">update to pro</a>
+  <a href="#" class="Get-help">Get-Help</a>
+  <a href="{% url 'login' %}" class="logout">Logout</a>
+</footer>
+
+<nav>
+  <div id="chat-box"></div>
+  <div class="input">
+    <input type="text" id="message-input" placeholder="Type a message...">
+    <button id="send-button">Send</button>
+  </div>
+</nav>
+
+</div>
+
+</body>
+
+{% endblock %}

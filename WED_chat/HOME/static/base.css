@@ -1,0 +1,127 @@
+#chat-box {
+  position: absolute;
+  top: 0;
+  left: 19%;
+  bottom: 0px;
+  width: 1000px;
+  overflow-y: scroll;
+  background-color: rgb(83, 83, 83);
+  display: flex;
+ /* Giới hạn chiều cao tối đa của khung chat */
+  overflow-y: auto; /* Tạo thanh cuộn tự động */
+  /* Thay đổi dòng này */
+  justify-content: flex-end;
+  align-items: flex-end;
+  flex-direction: column-reverse;
+}
+
+.message {
+  margin: 10px;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  width: 950px;
+  border-radius: 5px;
+  background: rgb(255, 255, 255);
+  margin-top: 10px;
+  /* Thêm dòng này */
+}
+p {
+  margin: 10px;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  width: 950px;
+  border-radius: 5px;
+  background: rgb(255, 255, 255);
+  margin-top: 10px;
+  /* Thêm dòng này */
+}
+
+.input {
+  position: absolute;
+  width: 940px;
+  height: 70px;
+  left: 20%;
+  bottom: 10px;
+}
+
+#message-input {
+  border-radius: none;
+  position: absolute;
+  width: 890px;
+  height: 50px;
+  border-radius: 20px;
+  background-color: rgb(149, 149, 149);
+  border-radius: none;
+}
+
+.input #send-button {
+  position: absolute;
+  margin-top: 10px;
+  padding: 20px 10px;
+  background-color: #7e7e7e;
+  width: 50px;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  left: 96%;
+  bottom: 13px;
+}
+
+.input #send-button:hover {
+  background-color: blue;
+}
+
+.menu {
+  position: absolute;
+  width: 300px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.menu a {
+  padding: 10px 30px;
+  color: white;
+  text-decoration: none;
+}
+.menu div {
+  padding: 10px 30px;
+  color: white;
+  text-decoration: none;
+}
+
+.menu a:hover {
+  background-color: #7e7e7e;
+}
+.menu div:hover {
+  background-color: #7e7e7e;
+}
+
+
+.accordion-container {
+  position: absolute;
+  background-color: black;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 245px;
+  border: none;
+}
+
+.accordion-container h3 {
+  background: none;
+  border: none;
+  color: white;
+}
+
+.accordion-container .answer {
+  color: white;
+  background: none;
+
+}

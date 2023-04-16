@@ -1,0 +1,108 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block content %}
+<footer class="menu">
+
+  <div id="clear" class="clear"> clear </div>
+  <a href="#" class="setting">setting</a>
+  <a href="#" class="update to pro">update to pro</a>
+  <a href="#" class="Get-help">Get-Help</a>
+  <a href="{% url 'login' %}" class="logout">Logout</a>
+</footer>
+
+<nav>
+  <div id="chat-box"></div>
+  <div class="input">
+    <input type="text" id="message-input" placeholder="Type a message...">
+    <button id="send-button">Send</button>
+  </div>
+</nav>
+<div class="accordion-container">
+  <h3 class="question">Ngành đào Tạo</h3>
+  <div class="answer">
+    Trường Đại học Đông Á có những ngành đào tạo gì?
+  </div>
+  <h3 class="question">Điểm Chuân</h3>
+  <div class="answer">
+    Trường Đại học Đông Á có yêu cầu gì về điểm chuẩn khi tuyển sinh?
+  </div>
+  <h3 class="question">Hỗ Trợ Học Phí</h3>
+  <div class="answer">
+    Trường Đại học Đông Á có hỗ trợ học phí cho sinh viên nghèo không?
+  </div>
+  <h3 class="question">Hoạt Động Ngoại Khóa</h3>
+  <div class="answer">
+    Sinh viên tại trường Đại học Đông Á có thể tham gia các hoạt động ngoại khóa như thể thao hay âm nhạc không?
+  </div>
+  <h3 class="question">Học Bổng</h3>
+  <div class="answer">
+    Trường Đại học Đông Á có chương trình học bổng cho sinh viên xuất sắc không? </div>
+  <h3 class="question">Thời Điểm Tuyển Sinh</h3>
+  <div class="answer">
+    Khi nào là thời điểm tuyển sinh của trường Đại học Đông Á?
+  </div>
+
+</div>
+
+</body>
+<script>
+  const chatBox = document.getElementById('chat-box');
+  const messageInput = document.getElementById('message-input');
+  const sendButton = document.getElementById('send-button');
+  const questions = document.querySelectorAll('.answer');
+  const clearButton = document.getElementById('clear');
+  clearButton.addEventListener('click', () => {
+    chatBox.innerHTML = ''; // Xóa toàn bộ nội dung trong khung chat
+  });
+  questions.forEach(question => {
+    question.addEventListener('click', () => {
+      const input = question.textContent.trim()
+      messageInput.value = input;
+    });
+  });
+  sendButton.addEventListener('click', () => {
+    const messageText = messageInput.value;
+    if (messageText.trim() !== '') {
+      const messageElement = document.createElement('div');
+      messageElement.classList.add('message');
+      messageElement.innerHTML = messageText; /* Thay thế dòng này */
+      chatBox.appendChild(messageElement);
+      messageInput.value = '';
+    }
+  });
+  messageInput.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+      const messageText = messageInput.value;
+      if (messageText.trim() !== '') {
+        const messageElement = document.createElement('div');
+        messageElement.classList.add('message');
+        messageElement.innerHTML = messageText; /* Thay thế dòng này */
+        chatBox.appendChild(messageElement);
+        messageInput.value = '';
+      }
+    }
+  });
+  const topicTitle = document.querySelector('.topic-title');
+  const questionList = document.querySelector('.question-list');
+
+  topicTitle.addEventListener('click', () => {
+    questionList.classList.toggle('show');
+  });
+
+</script>
+<script>
+  $(function () {
+    $(".accordion-container").accordion({
+      collapsible: true,
+      active: false,
+      heightStyle: "content"
+    });
+  });
+</script>
+
+</script>
+{% endblock %}
